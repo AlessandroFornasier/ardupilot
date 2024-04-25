@@ -52,6 +52,9 @@ public:
 #if AP_EXTERNAL_AHRS_CINS_ENABLED
         CINS = 3,
 #endif
+#if AP_EXTERNAL_AHRS_EQF_ENABLED
+        EqF = 4,
+#endif
     };
 
     static AP_ExternalAHRS *get_singleton(void) {

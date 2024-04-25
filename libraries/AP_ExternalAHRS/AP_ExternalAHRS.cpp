@@ -25,6 +25,7 @@
 #include "AP_ExternalAHRS_VectorNav.h"
 #include "AP_ExternalAHRS_MicroStrain5.h"
 #include "AP_ExternalAHRS_CINS.h"
+#include "AP_ExternalAHRS_EqF.h"
 
 #include <GCS_MAVLink/GCS.h>
 
@@ -107,6 +108,11 @@ void AP_ExternalAHRS::init(void)
 #if AP_EXTERNAL_AHRS_CINS_ENABLED
     case DevType::CINS:
         backend = new AP_ExternalAHRS_CINS(this, state);
+        break;
+#endif
+#if AP_EXTERNAL_AHRS_EQF_ENABLED
+    case DevType::EqF:
+        backend = new AP_ExternalAHRS_EqF(this, state);
         break;
 #endif
     }
