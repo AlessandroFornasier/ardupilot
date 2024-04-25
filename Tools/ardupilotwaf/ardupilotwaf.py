@@ -117,6 +117,7 @@ COMMON_VEHICLE_DEPENDENT_LIBRARIES = [
     'AP_CheckFirmware',
     'AP_ExternalControl',
     'AP_CINS',
+    'AP_EqF',
 ]
 
 def get_legacy_defines(sketch_name, bld):

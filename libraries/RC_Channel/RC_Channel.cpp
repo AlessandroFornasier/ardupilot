@@ -1616,7 +1616,9 @@ bool RC_Channel::do_aux_function(const aux_func_t ch_option, const AuxSwitchPos 
 
     case AUX_FUNC::AHRS_TYPE: {
 #if HAL_NAVEKF3_AVAILABLE && HAL_EXTERNAL_AHRS_ENABLED
-        AP::ahrs().set_ekf_type(ch_flag==AuxSwitchPos::HIGH? 11 : 3);
+        // CINS (3), EqF (4)
+        // AP::ahrs().set_ekf_type(ch_flag==AuxSwitchPos::HIGH? 11 : 3);
+        AP::ahrs().set_ekf_type(ch_flag==AuxSwitchPos::HIGH? 11 : 4);
 #endif
         break;
     }
